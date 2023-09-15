@@ -1,0 +1,39 @@
+.\" Manpage for _printf.
+.\" Contact AUTHORS to understand the function and its test cases.
+.TH man 8 "06 May 2010" "1.0" "_printf man page"
+.SH NAME
+_printf \- print formatted text to the standard output stream
+.SH SYNOPSIS
+printf FORMAT [ARGUMENT]...
+
+printf OPTION
+.SH DESCRIPTION
+This is a custom printf function for ALX printf project which mimic the built in printf fucntion.
+
+. SH FORMAT
+    It handles the mandatory specifiers follows:
+
+    1- plain text: normal text of any ascii characters.
+
+    2- %c: char variables
+
+    3- %s: string char pointers
+
+    4- %i: integer of various bases
+
+    5- %d: signed decimal integer
+
+--help
+    display this help and exit
+
+--version
+    output version information and exit
+
+.SH OPTIONS
+The _printf does not take any options.
+.SH BUGS
+No known bugs, since ALX checkers are GREEN.
+.SH AUTHOR
+Shymaa Mohamed Ismail (shymaa.m.ismail@gmail.com)
+
+Zainab Hossien (ugs.19687@ci.suez.edu.eg)
