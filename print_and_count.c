@@ -2,6 +2,53 @@
 #include "main.h"
 
 /**
+ * handle_indicator - handle the % indicators
+ * @next_char: next_char
+ * @arg_list: arg_list
+ * @format_current_index: format_current_index
+ * @count_chars: count_chars
+ * Return: array of int for (count char and format cuurent index)
+ *
+*/
+int *handle_indicator(char *next_char, va_list arg_list,
+						int format_current_index, int count_chars)
+{
+	int *arr_result[2];
+	int indicator_index = 0, is_handeled_token = 0;
+	arg_indicator_type indicators[] = { {"%", print_percent},
+	{"c", print_character}, {"s", print_string}, {"d", print_digit},
+	{"i", print_integer}};
+
+	while (indicator_index < 5)
+	{
+		if (next_char == *indicators[indicator_index].token)
+		{
+				count_chars += indicators[indicator_index].print(arg_list);
+				is_handeled_token = 1;
+				break;
+		}
+			indicator_index++;
+		}
+			if (is_handeled_token)
+				format_current_index += 2;
+			else
+				{
+					if (next_char == "%")
+					{
+						count_chars += print_percent();
+						format_current_index += 2;
+					}
+					else
+					{
+						count_chars += print_percent();
+						format_current_index += 1;
+					}
+			}
+		arr_result[0] = count_chars;
+		arr_result[1] = format_current_index;
+		return (arr_result);
+}
+/**
  * print_and_count - print formatted text and count its chars
  * @arg_list: variadic pointer to the last fixed argument
  * @format: pointer of the format string to be printed
@@ -10,12 +57,11 @@
 */
 int print_and_count(va_list arg_list, const char *format)
 {
-	int count_chars = 0, indicator_index = 0;
+	int count_chars = 0, indicator_index = 0, is_handeled_token = 0;
 	int format_current_index = 0, format_next_index = 0;
 	char current_char = 0, next_char = 0;
-	arg_indicator_type indicators[] = { {"%", print_percent},
-	{"c", print_character}, {"s", print_string}, {"d", print_digit},
-	{"i", print_integer}};
+	int *arr_result[2];
+
 	while (format[format_current_index] != '\0')
 	{
 		indicator_index = 0;
@@ -24,16 +70,10 @@ int print_and_count(va_list arg_list, const char *format)
 		next_char = format[format_next_index];
 		if (current_char == '%')
 		{
-			while (indicator_index < 5)
-			{
-			if (next_char == *indicators[indicator_index].token)
-			{
-				count_chars += indicators[indicator_index].print(arg_list);
-				break;
-			}
-			indicator_index++;
-			}
-			format_current_index += 2;
+			arr_result = handle_indicator(next_char, arg_list,
+											format_current_index, count_chars);
+			count_chars	= arr_result[0];
+			format_current_index = arr_result[1];
 		}
 		else
 		{
