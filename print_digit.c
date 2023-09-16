@@ -1,16 +1,13 @@
 #include <stdarg.h>
 #include "main.h"
 /**
-* print_digit - print digit
-*@digit_arg: pointer to the corresponding argument
-*Return: return length of the printed digit
+* print_digit - takes the digit from the variadic list and out it in the
+* std output using write function
 *
+* @param: argument (variadic list) pointer to the argumented to be printed
+* Return: (int) the length of the given digit will be printed
 */
-int print_digit(va_list  digit_arg)
-{
-    /**to do va_arg and print it*/
-	if (digit_arg)
-		return (1);
-	else
-		return (0);
+int print_digit(va_list param) {
+  int printed_digit = va_arg(digit_arg, int);
+  return write(STDOUT_FILENO, &digit, 1);
 }
