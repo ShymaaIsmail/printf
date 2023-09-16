@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <stddef.h>
 #include "main.h"
 /**
 * print_character - print character
@@ -8,9 +9,15 @@
 */
 int print_character(va_list  char_arg)
 {
-    /**to do va_arg and print it*/
-	if (char_arg)
+	if (char_arg != NULL)
+	{
+		char character = (char)va_arg(char_arg, int);
+
+		_putchar(character);
 		return (1);
+	}
 	else
-		return (0);
+	{
+			return (0);
+	}
 }
