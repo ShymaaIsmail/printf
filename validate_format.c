@@ -1,4 +1,3 @@
-#include <stddef.h>
 /**
  * validate_format - validate format pointer to ensure appropriate processing
  * @format: pointer to string that is provided by the program user
@@ -6,7 +5,7 @@
 */
 int validate_format(const char *format)
 {
-	int is_valid = format != NULL;
+	int is_valid = *format != '\0';
 
 	return (is_valid);
 }

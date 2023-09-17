@@ -1,5 +1,4 @@
 #include <stdarg.h>
-#include <stddef.h>
 #include "main.h"
 /**
 * print_string - print string
@@ -12,11 +11,9 @@ int print_string(va_list  string_arg)
 	int char_count = 0;
 	int iterator = 0;
 
-	if (string_arg != NULL)
-	{
 		char *string = (char *)va_arg(string_arg, char *);
 
-		if (string != NULL)
+		if (*string != '\0')
 		{
 			while (string[iterator] != '\0')
 			{
@@ -25,6 +22,5 @@ int print_string(va_list  string_arg)
 				iterator++;
 			}
 		}
-	}
 	return (char_count);
 }
