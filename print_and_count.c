@@ -47,9 +47,7 @@ void handle_indicator(int *arr_result, char next_char, va_list arg_list,
 					{
 						format_current_index += 1;
 					if (next_char == '\0' && count_chars == 0)
-					{
 						count_chars = -1;
-					}
 					}
 
 				}
