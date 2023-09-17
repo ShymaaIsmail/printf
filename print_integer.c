@@ -14,14 +14,16 @@ int print_integer(va_list  integer_argument)
 	unsigned long num = va_arg(integer_argument, unsigned long);
 	char string[22];
 
-	if ((signed int)num < 0) /*negative */
+	/*checks if the number is negative or not */
+	if ((signed int)num < 0)
 	{
 		num *= -1;
 		string[nsign] = '-';
 		nsign++;
 	}
 
-	if (num < SHRT_MAX)
+	/* checking wheather the the num uns_short, un_int or signed_int */
+	if (num < SHRT_MAX) /*Short Int max value in limits library*/
 		num = (unsigned short) num;
 	else if (!num < INT_MAX)
 		num = (unsigned int) num;
