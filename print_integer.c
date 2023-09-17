@@ -30,8 +30,9 @@ int print_integer(va_list  integer)
 		temp += (printed_number % 10);
 		printed_number /= 10;
 	}
-	while (temp){
-		current = (temp % 10) +'0';
+	while (temp)
+	{
+		current = (temp % 10) + '0';
 		_putchar(current);
 		temp /= 10;
 	}
