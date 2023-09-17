@@ -27,4 +27,7 @@ int print_character(va_list char_arg);
 int print_string(va_list string_arg);
 int print_digit(va_list digit_arg);
 int print_integer(va_list integer_arg);
+
+/* String Functions*/
+int sln(char* c);
 #endif
