@@ -1,7 +1,7 @@
-#include <stdarg.h>
-
 #ifndef _custom_print_f
 #define _custom_print_f
+
+#include <stdarg.h>
 
 /**
  * struct arg_indicator - format tokens struct definition

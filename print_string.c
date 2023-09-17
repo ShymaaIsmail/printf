@@ -25,6 +25,26 @@ int print_string(va_list  string_arg)
 				iterator++;
 			}
 		}
+		else
+		{
+			_putchar('(');
+			_putchar('n');
+			_putchar('u');
+			_putchar('l');
+			_putchar('l');
+			_putchar(')');
+			char_count = 6;
+		}
+	}
+	else
+	{
+			_putchar('(');
+			_putchar('n');
+			_putchar('u');
+			_putchar('l');
+			_putchar('l');
+			_putchar(')');
+			char_count = 6;
 	}
 	return (char_count);
 }

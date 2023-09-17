@@ -9,15 +9,8 @@
 */
 int print_character(va_list  char_arg)
 {
-	if (char_arg != NULL)
-	{
 		char character = (char)va_arg(char_arg, int);
 
 		_putchar(character);
 		return (1);
-	}
-	else
-	{
-			return (0);
-	}
 }
