@@ -10,15 +10,15 @@
  */
 int print_integer(va_list  integer_argument)
 {
-	int num_sign = 0;
+	int nsign = 0;
 	unsigned long num = va_arg(integer_argument, unsigned long);
-	char string_num[22];
+	char string[22];
 
 	if ((signed int)num < 0) /*negative */
 	{
 		num *= -1;
-		string_num[num_sign] = '-';
-		num_sign++;
+		string[nsign] = '-';
+		nsign++;
 	}
 
 	if (num < SHRT_MAX)
@@ -27,7 +27,7 @@ int print_integer(va_list  integer_argument)
 		num = (unsigned int) num;
 
 	/* checcks if it fails to convert num to string */
-	if (!cnv(string_num + num_sign, num, 10))
+	if (!cnv(string + nsign, num, 10))
 		return (-1);
-	return (write(STDOUT_FILENO, string_num, sln(string_num)));
+	return (write(STDOUT_FILENO, string, nsign + sln(string + nsign)));
 }
