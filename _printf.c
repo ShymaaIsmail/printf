@@ -14,7 +14,7 @@
 int _printf(const char *format, ...)
 {
 	int is_valid = 0;
-	int total_printed_symbols = 0;
+	int total_printed_symbols = -1;
 
 	is_valid = validate_format(format);
 	if (is_valid)
