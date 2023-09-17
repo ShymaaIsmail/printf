@@ -9,7 +9,7 @@
 int print_integer(va_list  integer)
 {
 	long long num = va_arg(integer, int);
-	long long sign = num % 10, counter = 0, printed_number = num;
+	long long counter = 0, printed_number = num;
 	long long temp = 0, current, number = num, idx = 0;
 
 	if (num < 0)
