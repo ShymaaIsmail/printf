@@ -1,6 +1,9 @@
 #include <stdarg.h>
 #include "main.h"
 #include <limits.h>
+#include <stdio.h>
+#include <unistd.h>
+
 /**
  * print_integer - print the given integer, handles the %d and %i
  * specifiers in the printf function
