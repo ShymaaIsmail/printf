@@ -12,6 +12,11 @@ int print_integer(va_list  integer)
 	signed long counter = 0, printed_number = num;
 	signed long temp = 0, current, number = num, idx = 0;
 
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	if ((signed long) num < 0)
 	{
 		_putchar('-');
