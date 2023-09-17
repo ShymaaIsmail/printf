@@ -26,7 +26,8 @@ int print_integer(va_list  integer_argument)
 	else if (!num < INT_MAX)
 		num = (unsigned int) num;
 
-	if (!number_converter(string_num + num_sign, num, 10))
+	/* checcks if it fails to convert num to string */
+	if (!cnv(string_num + num_sign, num, 10))
 		return (-1);
 	return (write(STDOUT_FILENO, string_num, sln(string_num)));
 }

@@ -30,4 +30,5 @@ int print_integer(va_list integer_arg);
 
 /* String Functions*/
 int sln(char* c);
+int cnv(char *s, unsigned long val, int b);
 #endif
