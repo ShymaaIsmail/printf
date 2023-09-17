@@ -16,7 +16,7 @@ void handle_indicator(int *arr_result, char next_char, va_list arg_list,
 {
 	int indicator_index = 0, is_handeled_token = 0;
 	arg_indicator_type indicators[] = { {"%", print_percent},
-	{"c", print_character}, {"s", print_string}, {"d", print_digit},
+	{"c", print_character}, {"s", print_string}, {"d", print_integer},
 	{"i", print_integer}};
 
 	while (indicator_index < 5)
