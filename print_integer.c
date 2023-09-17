@@ -8,21 +8,16 @@
  */
 int print_integer(va_list  integer)
 {
-	int num = va_arg(args, int);
-	int sign = num % 10, counter = 0, printed_number = num;
-	int temp, current;
+	long long num = va_arg(integer, int);
+	long long sign = num % 10, counter = 0, printed_number = num;
+	long long temp = 0, current, number = num, idx = 0;
 
-	/* handling negative sign */
-	if (sign < 0)
+	if (num < 0)
 	{
 		_putchar('-');
 		printed_number *= -1;
 		counter++;
 	}
-	temp = printed_number % 10;
-	printed_number /= 10;
-	++counter;
-	/*I converted the number from negative to positive, thus start printing */
 	while (printed_number)
 	{
 		counter++;
@@ -30,11 +25,18 @@ int print_integer(va_list  integer)
 		temp += (printed_number % 10);
 		printed_number /= 10;
 	}
+	while (number % 10 == 0)
+	{
+		idx++;
+		number /= 10;
+	}
 	while (temp)
 	{
 		current = (temp % 10) + '0';
 		_putchar(current);
 		temp /= 10;
 	}
+	while (idx--)
+		_putchar('0');
 	return (counter);
 }
