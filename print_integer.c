@@ -1,7 +1,6 @@
 #include <stdarg.h>
 #include "main.h"
 #include <limits.h>
-
 /**
  * print_integer - print the given integer, handles the %d and %i
  * specifiers in the printf function
@@ -28,8 +27,8 @@ int print_integer(va_list  integer_argument)
 	else if (!num < INT_MAX)
 		num = (unsigned int) num;
 
-	/* checcks if it fails to convert num to string */
-	if (!cnv(string + nsign, num, 10))
+	/* checks if it fails to convert num to string */
+	if (!number_converter(string + nsign, num, 10))
 		return (-1);
 	return (write(STDOUT_FILENO, string, nsign + sln(string + nsign)));
 }

@@ -1,5 +1,4 @@
-#include <main.h>
-#include <String.h>
+#include "main.h"
 
 /**
  * sln - gives the length of the given string
@@ -8,5 +7,11 @@
  */
 int sln(char *c)
 {
-	return (strlen(c));
+	int x = 0;
+
+	while (c[x] != '\0')
+	{
+		++x;
+	}
+	return (x);
 }
