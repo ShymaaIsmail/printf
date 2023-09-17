@@ -29,5 +29,5 @@ int print_digit(va_list digit_arg);
 int print_integer(va_list integer_arg);
 
 /* String Functions*/
-int sln(char* c);
+int sln(char *c);
 #endif
