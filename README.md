@@ -6,3 +6,4 @@ IN Task-1: the specifiers
 IN Task-2: the specifiers
 %i: integer
 %d: decimal
+note: only 1 function for i and d specifier
