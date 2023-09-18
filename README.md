@@ -5,3 +5,4 @@ IN Task-1: the specifiers
 %%: percentage
 IN Task-2: the specifiers
 %i: integer
+%d: decimal
